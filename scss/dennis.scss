@@ -1,0 +1,33 @@
+// Bootstrap
+.card {
+    border: none;
+}
+
+// Moodle
+.course-section {
+    .section-item {
+        border: none;
+    }
+}
+
+.secondary-navigation {
+    .navigation {
+        border-bottom: none;
+    }
+}
+
+// Dennis
+.bg-dennisblue {
+    background-color: map-get($theme-colors, 'dennisblue');
+}
+
+.bs-dennisblue {
+    border-radius: 0;
+    box-shadow: 0 0 4px map-get($theme-colors, 'dennisblue');
+    margin: 4px;
+}
+
+.fg-dennisblue {
+    color: map-get($theme-colors, 'dennisyellow');
+}
+
