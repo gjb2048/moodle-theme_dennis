@@ -42,6 +42,9 @@ $string['pluginname'] = 'Dennis';
 $string['region-side-pre'] = 'Right';
 $string['region-footer'] = 'Footer';
 
+$string['serverdatetime'] = 'Server date and time: ';
+$string['serverdatetimebutton'] = 'What\'s the date and time where you are?';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Add custom CSS to the theme.';
 
