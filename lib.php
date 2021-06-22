@@ -66,6 +66,13 @@ function theme_dennis_get_pre_scss($theme) {
         $scss .= '$h6-font-size: $font-size-base * '.$sizes[6].';';
     }
 
+    if (!empty($theme->settings->blockwidth)) {
+        $scss .= '$blocks-column-width: '.$theme->settings->blockwidth.'px;'.PHP_EOL;
+    }
+    if (!empty($theme->settings->drawerwidth)) {
+        $scss .= '$drawer-width: '.$theme->settings->drawerwidth.'px;'.PHP_EOL;
+    }
+
     return $scss;
 }
 

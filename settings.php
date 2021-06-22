@@ -43,6 +43,27 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // Settings task.
+    $name = 'theme_dennis/blockwidth';
+    $title = get_string('blockwidth', 'theme_dennis');
+    $lower = 100;
+    $upper = 500;
+    $description = get_string('sizesdesc', 'theme_dennis', array('lower' => $lower, 'upper' => $upper));
+    $default = 200;
+    $setting = new \theme_dennis\admin_setting_configsizes($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    $name = 'theme_dennis/drawerwidth';
+    $title = get_string('drawerwidth', 'theme_dennis');
+    $lower = 200;
+    $upper = 400;
+    $description = get_string('sizesdesc', 'theme_dennis', array('lower' => $lower, 'upper' => $upper));
+    $default = 300;
+    $setting = new \theme_dennis\admin_setting_configsizes($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Custom CSS.
     $name = 'theme_dennis/customcss';
     $title = get_string('customcss', 'theme_dennis');
