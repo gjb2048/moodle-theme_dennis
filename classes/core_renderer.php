@@ -27,6 +27,28 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_dennis_core_renderer extends \theme_boost\output\core_renderer {
 
+    public function standard_after_main_region_html() {
+        $output = parent::standard_after_main_region_html();
+
+        $output .= html_writer::start_tag('div', array('class' => 'container-fluid'));
+        $output .= html_writer::start_tag('div', array('class' => 'row mb-4'));
+        $output .= html_writer::start_tag('div', array('class' => 'col-12 mb-2 text-center'));
+        $output .= html_writer::start_tag('button',
+            array('id' => 'clickmebtn', 'class' => 'btn btn-primary text-center', 'type' => 'button'));
+        $output .= get_string('clickmebutton', 'theme_dennis');
+        $output .= html_writer::end_tag('button');
+        $output .= html_writer::end_tag('div');
+        $output .= html_writer::start_tag('form', array('class' => 'col-12 text-center'));
+        $output .= html_writer::tag('input', '', array('id' => 'clickmetext', 'type' => 'text', 'value' => 'Hello!'));
+        $output .= html_writer::end_tag('form');
+        $output .= html_writer::end_tag('div');
+        $output .= html_writer::end_tag('div');
+
+        $this->page->requires->js_call_amd('theme_dennis/clickme', 'clickme');
+
+        return $output;
+    }
+
     public function dennisblocks($region, $blocksperrow = 0) {
         $output = '';
         $displayregion = $this->page->apply_theme_region_manipulations($region);
