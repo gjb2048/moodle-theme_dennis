@@ -23,8 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-$string['choosereadme'] = '
-<div class="clearfix">
+$string['choosereadme'] = '<div class="clearfix">
 <h2>Dennis</h2>
 <h3>About</h3>
 <p>Dennis is a basic child theme of the Boost theme.</p>
