@@ -45,7 +45,8 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 $serverdatetime = strftime('%d/%m/%Y %H:%M:%S');
-$PAGE->requires->js_call_amd('theme_dennis/serverdatetime', 'init', array('data' => array('currentdatetime' => $serverdatetime)));
+$PAGE->requires->js_call_amd('theme_dennis/serverdatetime', 'serverdatetime',
+    array('data' => array('currentdatetime' => $serverdatetime)));
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
