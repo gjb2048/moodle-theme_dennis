@@ -37,17 +37,26 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
-
-$bodyattributes = $OUTPUT->body_attributes([]);
+$bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$blocksprehtml = $OUTPUT->blocks('side-pre');
+$haspreblocks = strpos($blocksprehtml, 'data-block=') !== false;
 $blocksfooterhtml = $OUTPUT->dennisblocks('footer', 3);
-
+$buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions();
+// If the settings menu will be included in the header then don't add it here.
+$regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes,
+    'sidepreblocks' => $blocksprehtml,
+    'haspreblocks' => $haspreblocks,
     'footerblocks' => $blocksfooterhtml,
-    'navdraweropen' => $navdraweropen
+    'bodyattributes' => $bodyattributes,
+    'navdraweropen' => $navdraweropen,
+    'regionmainsettingsmenu' => $regionmainsettingsmenu,
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
 ];
-$templatecontext['flatnavigation'] = $PAGE->flatnav;
 
-echo $OUTPUT->render_from_template('theme_dennis/denniscolumns1', $templatecontext);
+$nav = $PAGE->flatnav;
+$templatecontext['flatnavigation'] = $nav;
+$templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
+echo $OUTPUT->render_from_template('theme_dennis/columns2', $templatecontext);

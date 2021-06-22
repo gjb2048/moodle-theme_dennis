@@ -40,6 +40,7 @@ $string['configtitle'] = 'Dennis';
 $string['pluginname'] = 'Dennis';
 
 $string['region-side-pre'] = 'Right';
+$string['region-footer'] = 'Footer';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Add custom CSS to the theme.';

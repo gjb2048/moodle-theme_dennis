@@ -15,16 +15,20 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_dennis/denniscolumns1
+    @template theme_dennis/columns2
 
-    Dennis 1 column layout template.
+    Dennis 2 column layout template.
 
     Context variables required for this template:
     * sitename - The name of the site
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the side-pre blocks
+    * haspreblocks - true if there are side-pre blocks on this page
     * footerblocks - HTML for the footer blocks
     * navdraweropen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
+    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
 
     Example context (json):
     {
@@ -34,10 +38,14 @@
             "page_title": "Test page",
             "favicon": "favicon.ico",
             "main_content": "<h1>Headings make html validators happier</h1>"
-        },
+         },
         "bodyattributes":"",
+        "sidepreblocks": "<h2>Side-pre blocks html goes here</h2>",
+        "haspreblocks":true,
         "footerblocks": "<h2>Footer blocks html goes here</h2>",
-        "navdraweropen":true
+        "navdraweropen":true,
+        "regionmainsettingsmenu": "",
+        "hasregionmainsettingsmenu": false
     }
 }}
 {{> theme_boost/head }}
@@ -53,14 +61,31 @@
     {{> theme_boost/nav-drawer }}
 
     <div id="page" class="container-fluid d-print-block">
+        {{{ output.full_header }}}
+
         <div id="page-content" class="row pb-3 d-print-block">
             <div id="region-main-box" class="col-12">
-                <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                {{#hasregionmainsettingsmenu}}
+                <div id="region-main-settings-menu" class="d-print-none {{#haspreblocks}}has-blocks{{/haspreblocks}}">
+                    <div> {{{ output.region_main_settings_menu }}} </div>
+                </div>
+                {{/hasregionmainsettingsmenu}}
+                <section id="region-main" {{#haspreblocks}}class="has-blocks mb-3"{{/haspreblocks}} aria-label="{{#str}}content{{/str}}">
+
+                    {{#hasregionmainsettingsmenu}}
+                        <div class="region_main_settings_menu_proxy"></div>
+                    {{/hasregionmainsettingsmenu}}
                     {{{ output.course_content_header }}}
                     {{{ output.main_content }}}
                     {{{ output.activity_navigation }}}
                     {{{ output.course_content_footer }}}
+
                 </section>
+                {{#haspreblocks}}
+                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ sidepreblocks }}}
+                </section>
+                {{/haspreblocks}}
             </div>
         </div>
         {{{ footerblocks }}}
