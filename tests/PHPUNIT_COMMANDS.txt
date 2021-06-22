@@ -1,0 +1,73 @@
+Ref: https://docs.moodle.org/dev/PHPUnit
+
+Ensure (as per Moodle dev doc above), for example:
+
+$CFG->phpunit_prefix = 'phpu_';
+$CFG->phpunit_dataroot = 'F:\\moodledev\\moodlebitesphpudata';
+
+is set in the config.php file and that the 'phpunit_dataroot' directory exists.
+
+Linux / Mac:
+
+Have the parent dir of 'moodle' (where the code is) owned by the same user and group as 'moodle' like 'www-data'.
+If you gave a different user on your install to 'www-data' then use that instead.
+
+composer install
+
+or
+
+sudo -u www-data composer install --no-plugins --no-scripts
+
+Ref: https://getcomposer.org/root
+
+sudo -u www-data php admin/tool/phpunit/cli/init.php
+
+sudo -u www-data vendor/bin/phpunit --filter theme_dennis_tests_testcase
+
+or
+
+sudo -u www-data vendor/bin/phpunit theme/dennis/tests/tests_test.php
+
+
+Windows:
+
+"Download Composer-Setup.exe from http://getcomposer.org/download/ and install it",
+Ref: https://docs.moodle.org/dev/PHPUnit_installation_in_Windows#Install_Composer_dependency_manager
+
+In the Moodle root:
+
+composer install
+
+php admin/tool/phpunit/cli/init.php
+
+vendor\bin\phpunit theme/dennis/tests/tests_test.php
+
+or:
+
+vendor\bin\phpunit --filter theme_dennis_tests_testcase
+
+Ref: https://moodle.org/mod/forum/discuss.php?d=412355
+
+Note:
+
+When running on Linux if you get:
+
+    Required locale 'en_AU.UTF-8' is not installed.
+
+when '[sudo] php admin/tool/phpunit/cli/init.php' and Moodle is showing:
+
+    Your server does not seem to fully support the following languages:
+
+    English ‎(en)‎
+
+    Instead, the global locale (en_AU.UTF-8) will be used to format certain strings such as dates or numbers.
+
+on 'Dashboard -> Site administration -> Language -> Language packs', then do:
+
+    sudo apt install language-pack-en
+
+then:
+
+    sudo service apache2 reload
+
+Ref: https://moodle.org/mod/forum/discuss.php?d=390750
