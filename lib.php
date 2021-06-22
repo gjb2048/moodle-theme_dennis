@@ -37,11 +37,15 @@ require_once($CFG->dirroot . '/theme/boost/lib.php');
  * @return string SCSS.
  */
 function theme_dennis_get_pre_scss($theme) {
+    global $CFG;
+
     static $boosttheme = null;
     if (empty($boosttheme)) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
     }
     $scss = theme_boost_get_pre_scss($boosttheme);
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/dennis/scss/dennis_pre.scss');
 
     return $scss;
 }
@@ -55,11 +59,15 @@ function theme_dennis_get_pre_scss($theme) {
  * @return string SCSS.
  */
 function theme_dennis_get_main_scss_content($theme) {
+    global $CFG;
+
     static $boosttheme = null;
     if (empty($boosttheme)) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
     }
     $scss = theme_boost_get_main_scss_content($boosttheme);
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/dennis/scss/dennis.scss');
 
     return $scss;
 }
