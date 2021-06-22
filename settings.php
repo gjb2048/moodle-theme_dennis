@@ -25,6 +25,30 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-// if ($ADMIN->fulltree) {
-    // Add your settings here and uncomment the 'if' statement.
-// }
+if ($ADMIN->fulltree) {
+    // Settings task.
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingdennis', get_string('configtitle', 'theme_dennis'));
+    $page = new admin_settingpage('theme_dennis_general', get_string('generalsettings', 'theme_boost'));
+
+    $name = 'theme_dennis/drawerleftwidth';
+    $title = get_string('drawerleftwidth', 'theme_dennis');
+    $lower = 100;
+    $upper = 500;
+    $description = get_string('sizesdesc', 'theme_dennis', ['lower' => $lower, 'upper' => $upper]);
+    $default = 200;
+    $setting = new \theme_dennis\admin_setting_configsizes($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $name = 'theme_dennis/drawerrightwidth';
+    $title = get_string('drawerrightwidth', 'theme_dennis');
+    $lower = 200;
+    $upper = 400;
+    $description = get_string('sizesdesc', 'theme_dennis', ['lower' => $lower, 'upper' => $upper]);
+    $default = 300;
+    $setting = new \theme_dennis\admin_setting_configsizes($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $settings->add($page);
+}
