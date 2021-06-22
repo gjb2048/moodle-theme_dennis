@@ -43,6 +43,25 @@ function theme_dennis_get_pre_scss($theme) {
     }
     $scss = theme_boost_get_pre_scss($boosttheme);
 
+    // Test.
+    /*$scss .= '$font-size-base: 1.5rem;';
+    $scss .= '$h1-font-size: $font-size-base * 2.5;';
+    $scss .= '$h2-font-size: $font-size-base * 2;';
+    $scss .= '$h3-font-size: $font-size-base * 1.75;';
+    $scss .= '$h4-font-size: $font-size-base * 1.5;';
+    $scss .= '$h5-font-size: $font-size-base * 1.25;';
+    $scss .= '$h6-font-size: $font-size-base * 1;';*/
+    if (!empty($theme->settings->fontsizes)) {
+        $sizes = \theme_dennis\admin_setting_configfontsizes::decode_from_db($theme->settings->fontsizes);
+        $scss .= '$font-size-base: ' . $sizes[0] . ';';
+        $scss .= '$h1-font-size: $font-size-base * ' . $sizes[1] . ';';
+        $scss .= '$h2-font-size: $font-size-base * ' . $sizes[2] . ';';
+        $scss .= '$h3-font-size: $font-size-base * ' . $sizes[3] . ';';
+        $scss .= '$h4-font-size: $font-size-base * ' . $sizes[4] . ';';
+        $scss .= '$h5-font-size: $font-size-base * ' . $sizes[5] . ';';
+        $scss .= '$h6-font-size: $font-size-base * ' . $sizes[6] . ';';
+    }
+
     return $scss;
 }
 
@@ -55,11 +74,15 @@ function theme_dennis_get_pre_scss($theme) {
  * @return string SCSS.
  */
 function theme_dennis_get_main_scss_content($theme) {
+    global $CFG;
+
     static $boosttheme = null;
     if (empty($boosttheme)) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
     }
     $scss = theme_boost_get_main_scss_content($boosttheme);
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/dennis/scss/dennis.scss');
 
     return $scss;
 }
