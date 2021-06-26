@@ -30,7 +30,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class theme_dennis_tests_testcase extends advanced_testcase {
+class theme_dennis_tests extends advanced_testcase {
 
     protected $outputus;
 

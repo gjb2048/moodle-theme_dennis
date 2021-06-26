@@ -18,15 +18,41 @@ or
 
 sudo -u www-data composer install --no-plugins --no-scripts
 
+Update:
+
+sudo -u www-data composer update --no-plugins --no-scripts
+
+Upgrade to composer 2:
+
+Ref: https://blog.packagist.com/composer-2-0-is-now-available/ then to https://getcomposer.org/download/ to run the php scripts, e.g:
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+Make sure you use their script!  The above is only an example!
+
+then:
+
+which composer
+
+then:
+
+sudo php composer-setup.php --install-dir /usr/bin --filename composer
+
+
 Ref: https://getcomposer.org/root
 
 sudo -u www-data php admin/tool/phpunit/cli/init.php
 
-sudo -u www-data vendor/bin/phpunit --filter theme_dennis_tests_testcase
+sudo -u www-data vendor/bin/phpunit --filter theme_dennis_tests
 
 or
 
-sudo -u www-data vendor/bin/phpunit theme/dennis/tests/tests_test.php
+sudo -u www-data vendor/bin/phpunit theme/dennis/tests/theme_dennis_tests.php
+
+Drop tables:
+
+sudo -u www-data php admin/tool/phpunit/cli/util.php --drop
 
 
 Windows:
@@ -40,13 +66,15 @@ composer install
 
 php admin/tool/phpunit/cli/init.php
 
-vendor\bin\phpunit theme/dennis/tests/tests_test.php
+vendor\bin\phpunit theme/dennis/tests/theme_dennis_tests.php
 
 or:
 
-vendor\bin\phpunit --filter theme_dennis_tests_testcase
+vendor\bin\phpunit --filter theme_dennis_tests
 
 Ref: https://moodle.org/mod/forum/discuss.php?d=412355
+
+You can also use the same phpunit / php commands on Windows too as per Linux / Mac.  Just change the direction of the directory delimiter as required.
 
 Note:
 
