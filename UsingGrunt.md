@@ -1,11 +1,10 @@
 Installing Grunt
 ================
 
-Get 14.x from:
+Look in the Moodle root file 'package.json' and find the JSON section that starts with "engines",
+that will tell you the version of Node.js to get from: https://nodejs.org/en/download/current/.
 
-Get the 'Current' not 'LTS' version from https://nodejs.org/en/download/current/
-
-On Linux, you can follow https://nodejs.org/en/download/package-manager/ to install via a package manager.
+On Linux, you can also follow https://nodejs.org/en/download/package-manager/ to install via a package manager.
 
 then in a shell (Linux - prefix with 'sudo') / 'Node.js Command prompt' (Windows) in the Moodle root directory:
 
