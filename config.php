@@ -49,3 +49,5 @@ $THEME->csspostprocess = 'theme_dennis_process_css';
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->haseditswitch = true;
+$THEME->usescourseindex = true;

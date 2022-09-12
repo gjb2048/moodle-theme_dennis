@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 4.0.0.1
+  1. Upgrade to Moodle 4.0.
+
 Version 3.11.0.1
   1. Upgrade to Moodle 3.11.
 
