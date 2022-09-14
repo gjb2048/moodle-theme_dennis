@@ -26,8 +26,6 @@
 
 namespace theme_dennis\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * The Dennis theme does not store any user data directly.
  */
