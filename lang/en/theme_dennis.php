@@ -23,18 +23,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-$string['choosereadme'] = '<div class="clearfix">
-<h2>Dennis</h2>
-<h3>About</h3>
-<p>Dennis is a basic child theme of the Boost theme.</p>
-<h3>Theme Credits</h3>
-<p>Author: G J Barnard<br>
-Contact: <a href="http://moodle.org/user/profile.php?id=442195">Moodle profile</a><br>
-Website: <a href="http://about.me/gjbarnard">about.me/gjbarnard</a>
-</p>
-<h3>More information</h3>
-<p><a href="dennis/Readme.md">How to use this theme.</a></p>
-</div></div>';
+$string['choosereadme'] = '<div class="clearfix"><h2>Dennis</h2>'.
+'<h3>About</h3>'.
+'<p>Dennis is a basic child theme of the Boost theme.</p>'.
+'<h3>Theme Credits</h3>'.
+'<p>Author: G J Barnard<br>'.
+'Contact: <a href="http://moodle.org/user/profile.php?id=442195">Moodle profile</a><br>'.
+'Website: <a href="http://about.me/gjbarnard">about.me/gjbarnard</a>'.
+'</p>'.
+'<h3>More information</h3>'.
+'<p><a href="dennis/Readme.md">How to use this theme.</a></p>'.
+'</div></div>';
 
 $string['configtitle'] = 'Dennis';
 $string['pluginname'] = 'Dennis';
