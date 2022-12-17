@@ -37,6 +37,72 @@ $THEME->enable_dock = false;
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = [];
 
+$dennisprefooter = ['side-pre', 'footer'];
+$THEME->layouts = [
+    // Standard layout with blocks.
+    'standard' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+    ],
+    // Main course page.
+    'course' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+        'options' => ['langmenu' => true],
+    ],
+    'coursecategory' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+    ],
+    // Part of course, typical for modules - default page layout if $cm specified in require_login().
+    'incourse' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+    ],
+    // The site home page.
+    'frontpage' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true],
+    ],
+    // Server administration scripts.
+    'admin' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+    ],
+    // My courses page.
+    'mycourses' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true],
+    ],
+    // My dashboard page.
+    'mydashboard' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
+    ],
+    // My public page.
+    'mypublic' => [
+        'file' => 'drawers.php',
+        'regions' => $dennisprefooter,
+        'defaultregion' => 'side-pre',
+    ],
+    // The pagelayout used for reports.
+    'report' => [
+        'file' => 'report.php',
+        'regions' => ['footer'],
+        'defaultregion' => 'footer',
+    ],
+];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->prescsscallback = 'theme_dennis_get_pre_scss';
