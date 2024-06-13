@@ -27,15 +27,15 @@ defined('MOODLE_INTERNAL') || die;
 
 $THEME->doctype = 'html5';
 $THEME->name = 'dennis';
-$THEME->parents = array('boost');
-$THEME->sheets = array('custom');
+$THEME->parents = ['boost'];
+$THEME->sheets = ['custom'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->precompiledcsscallback = 'theme_boost_get_precompiled_css';
 $THEME->enable_dock = false;
 
 $THEME->supportscssoptimisation = false;
-$THEME->yuicssmodules = array();
+$THEME->yuicssmodules = [];
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
@@ -51,3 +51,7 @@ $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 $THEME->haseditswitch = true;
 $THEME->usescourseindex = true;
+// By default, all boost themes do not need their titles displayed.
+$THEME->activityheaderconfig = [
+    'notitle' => true,
+];

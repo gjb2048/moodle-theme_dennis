@@ -19,10 +19,17 @@
  *
  * @package    theme_dennis
  * @copyright  &copy; 2020-onwards G J Barnard.
- * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ * @author     G J Barnard - {@link https://moodle.org/user/profile.php?id=442195}
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
+/**
+ * Upgrade DB.
+ *
+ * @param int $oldversion Old version no if any.
+ *
+ * @return boolean Success.
+ */
 function xmldb_theme_dennis_upgrade($oldversion = 0) {
 
     // Automatic 'Purge all caches'....

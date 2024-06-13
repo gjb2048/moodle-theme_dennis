@@ -20,8 +20,8 @@
  * @package    theme_dennis
  * @category   privacy
  * @copyright  &copy; 2020-onwards G J Barnard.
- * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author     G J Barnard - {@link https://moodle.org/user/profile.php?id=442195}
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 namespace theme_dennis\privacy;
@@ -37,7 +37,7 @@ class provider implements \core_privacy\local\metadata\null_provider {
      *
      * @return  string
      */
-    public static function get_reason() : string {
+    public static function get_reason(): string {
         return 'privacy:nop';
     }
 }

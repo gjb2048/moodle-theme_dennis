@@ -14,8 +14,8 @@ License    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 Developed and maintained by
 ===========================
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile | http://moodle.org/user/profile.php?id=442195
-Web profile | http://about.me/gjbarnard
+Moodle profile | [Moodle.org](https://moodle.org/user/profile.php?id=442195)
+Web profile | [gjbarnard.co.uk](https://gjbarnard.co.uk)
 
 Free Software
 =============
@@ -28,10 +28,10 @@ If you reuse any of the code then I kindly ask that you make reference to the th
 
 Required version of Moodle
 ==========================
-This version works with Moodle 4.1 version 2022112800.00 (Build: 20221128) and above within the MOODLE_401_STABLE branch until the
+This version works with Moodle 4.4 version 2024042200.00 (Build: 20240422) and above within the MOODLE_404_STABLE branch until the
 next release.
 
-Please ensure that your hardware and software complies with 'Requirements' in '[Installing Moodle](https://docs.moodle.org/401/en/Installing_Moodle)'.
+Please ensure that your hardware and software complies with 'Requirements' in '[Installing Moodle](https://docs.moodle.org/404/en/Installing_Moodle)'.
 
 Installation
 ============
@@ -79,5 +79,7 @@ See Changes.md
 Me
 ==
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile: http://moodle.org/user/profile.php?id=442195
-Web profile   : http://about.me/gjbarnard
+
+- Moodle profile | [Moodle.org](https://moodle.org/user/profile.php?id=442195)
+- @gjbarnard | [X](https://x.com/gjbarnard).
+- Web profile | [gjbarnard.co.uk](https://gjbarnard.co.uk)

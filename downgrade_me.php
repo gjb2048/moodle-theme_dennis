@@ -19,8 +19,8 @@
  *
  * @package    theme_dennis
  * @copyright  &copy; 2021-onwards G J Barnard.
- * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ * @author     G J Barnard - {@link https://moodle.org/user/profile.php?id=442195}
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
 require_once(__DIR__.'/../../config.php');
@@ -34,5 +34,6 @@ if (is_siteadmin()) {
     $currentversionversion = $plugin->version;
     $newversion = $plugin->version - 1;
     set_config('version', $newversion, 'theme_dennis');
-    echo 'Theme Dennis downgraded to version: '.$newversion.' from config version '.$currentconfigversion.', version.php version '.$currentversionversion.'.';
+    echo 'Theme Dennis downgraded to version: '.$newversion.' from config version '.$currentconfigversion.
+        ', version.php version '.$currentversionversion.'.';
 }
