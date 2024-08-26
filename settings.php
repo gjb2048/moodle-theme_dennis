@@ -25,6 +25,33 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-// if ($ADMIN->fulltree) {
-    // Add your settings here and uncomment the 'if' statement.
-// }
+if ($ADMIN->fulltree) {
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingdennis', get_string('configtitle', 'theme_dennis'));
+    $page = new admin_settingpage('theme_dennis_general', get_string('generalsettings', 'theme_boost'));
+
+    // Custom CSS.
+    $name = 'theme_dennis/customcss';
+    $title = get_string('customcss', 'theme_dennis');
+    $description = get_string('customcssdesc', 'theme_dennis');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Must add the page after defining all the settings.
+    $settings->add($page);
+
+    $page = new admin_settingpage('theme_dennis_course', get_string('coursesettings', 'theme_dennis'));
+
+    // Course title text colour setting.
+    $name = 'theme_dennis/coursetitlecolour';
+    $title = get_string('coursetitlecolour', 'theme_dennis');
+    $description = get_string('coursetitlecolourdesc', 'theme_dennis');
+    $default = '#ffaabb';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $settings->add($page);
+}

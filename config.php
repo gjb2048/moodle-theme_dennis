@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 $THEME->doctype = 'html5';
 $THEME->name = 'dennis';
 $THEME->parents = ['boost'];
-$THEME->sheets = [''];
+$THEME->sheets = ['styles'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->precompiledcsscallback = 'theme_boost_get_precompiled_css';
@@ -44,6 +44,7 @@ $THEME->scss = function (theme_config $theme) {
     return theme_dennis_get_main_scss_content($theme);
 };
 $THEME->extrascsscallback = 'theme_dennis_get_extra_scss';
+$THEME->csspostprocess = 'theme_dennis_process_css';
 
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
