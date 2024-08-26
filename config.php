@@ -44,7 +44,6 @@ $THEME->scss = function(theme_config $theme) {
     return theme_dennis_get_main_scss_content($theme);
 };
 $THEME->extrascsscallback = 'theme_dennis_get_extra_scss';
-$THEME->csspostprocess = 'theme_dennis_process_css';
 
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
