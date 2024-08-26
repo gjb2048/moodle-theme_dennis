@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         php: ['8.1', '8.2']
-        moodle-branch: ['main']
+        moodle-branch: ['MOODLE_404_STABLE']
         database: [mariadb]
 
     steps:
@@ -82,10 +82,9 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci savepoints
 
-# Don't run because of aria controls same document error, will be fine as output will be the same document.
-#      - name: Mustache Lint
-#        if: ${{ always() }}
-#        run: moodle-plugin-ci mustache
+      - name: Mustache Lint
+        if: ${{ always() }}
+        run: moodle-plugin-ci mustache
 
 #      - name: Grunt
 #        if: ${{ always() }}
