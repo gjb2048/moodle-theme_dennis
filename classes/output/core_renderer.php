@@ -92,6 +92,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $header->timeofday = $timeofday;
         $header->firstname = $USER->firstname;
         $header->loggedinduration = $loggedinduration;
+        $header->hasbackgroundimage = (!empty($this->page->theme->settings->headerbackgroundimage));
+
         return $this->render_from_template('theme_dennis/full_header', $header);
     }
 }

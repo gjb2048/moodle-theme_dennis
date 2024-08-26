@@ -81,3 +81,72 @@ function theme_dennis_get_extra_scss($theme) {
 
     return $scss;
 }
+
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
+function theme_dennis_process_css($css, $theme) {
+
+    // Set the header background image.
+    $headerbackgroundimage = (empty($theme->settings->headerbackgroundimage)) ? '' :
+        'background-image: url("' . $theme->setting_file_url('headerbackgroundimage', 'headerbackgroundimage') . '");';
+    $css = theme_dennis_set_setting($css, '[[setting:headerbackgroundimage]]', $headerbackgroundimage);
+
+    return $css;
+}
+
+/**
+ * Adds replaces a given setting (tag) in the CSS before it is cached.
+ *
+ * @param string $css The original CSS.
+ * @param string $tag The tag to replace.
+ * @param string $customcss The custom CSS to add.
+ * @return string The CSS which now contains our custom CSS.
+ */
+function theme_dennis_set_setting($css, $tag, $customcss) {
+    $replacement = $customcss;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
+
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ */
+function theme_dennis_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
+    static $theme = null;
+    if (empty($theme)) {
+        $theme = theme_config::load('dennis');
+    }
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
+        // By default, theme files must be cache-able by both browsers and proxies.  From 'More' theme.
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
+        if ($filearea === 'headerbackgroundimage') {
+            return $theme->setting_file_serve('headerbackgroundimage', $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
+    } else {
+        send_file_not_found();
+    }
+}

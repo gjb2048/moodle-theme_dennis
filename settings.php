@@ -25,6 +25,25 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-// if ($ADMIN->fulltree) {
-    // Add your settings here and uncomment the 'if' statement.
-// }
+if ($ADMIN->fulltree) {
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingdennis', get_string('configtitle', 'theme_dennis'));
+    $page = new admin_settingpage('theme_dennis_general', get_string('generalsettings', 'theme_boost'));
+
+    // Header background image.
+    $name = 'theme_dennis/headerbackgroundimage';
+    $title = get_string('headerbackgroundimage', 'theme_dennis');
+    $description = get_string('headerbackgroundimagedesc', 'theme_dennis');
+    $setting = new admin_setting_configstoredfile(
+        $name,
+        $title,
+        $description,
+        'headerbackgroundimage',
+        0,
+        ['accepted_types' => ['jpg', 'png', 'webp']]
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Must add the page after defining all the settings.
+    $settings->add($page);
+}
