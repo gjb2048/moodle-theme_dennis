@@ -36,8 +36,6 @@ $string['choosereadme'] = '<div class="clearfix"><h2>Dennis</h2>'.
 '</div></div>';
 
 $string['configtitle'] = 'Dennis';
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Add custom CSS to the theme.';
 $string['pluginname'] = 'Dennis';
 
 $string['region-side-pre'] = 'Right';

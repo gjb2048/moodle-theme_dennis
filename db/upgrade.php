@@ -32,8 +32,5 @@
  */
 function xmldb_theme_dennis_upgrade($oldversion = 0) {
 
-    // Automatic 'Purge all caches'....
-    purge_all_caches();
-
     return true;
 }

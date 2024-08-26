@@ -27,13 +27,4 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
     // Add your settings here.
-
-    // Custom CSS.
-    $name = 'theme_dennis/customcss';
-    $title = get_string('customcss', 'theme_dennis');
-    $description = get_string('customcssdesc', 'theme_dennis');
-    $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
 }

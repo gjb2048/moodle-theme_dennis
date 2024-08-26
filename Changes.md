@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 404.0.1
+  1. Upgrade to Moodle 4.4.
+
 Version 401.0.1
   1. Upgrade to Moodle 4.1.
 
