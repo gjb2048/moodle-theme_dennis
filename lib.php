@@ -97,9 +97,9 @@ function theme_dennis_process_css($css, $theme) {
     if (!empty($theme->settings->coursetitlecolour)) {
         $coursetitlecolour = $theme->settings->coursetitlecolour;
     } else {
-        $coursetitlecolour = null;
+        $coursetitlecolour = '#000';
     }
-    $css = theme_dennis_set_coursetitlecolour($css, $coursetitlecolour);
+    $css = theme_dennis_set_setting($css, '[[setting:coursetitlecolour]]', $coursetitlecolour);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -107,39 +107,20 @@ function theme_dennis_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = theme_dennis_set_customcss($css, $customcss);
+    $css = theme_dennis_set_setting($css, '[[setting:customcss]]', $customcss);
 
     return $css;
 }
 
 /**
- * Sets the colour of the course title text.
+ * Adds replaces a given setting (tag) in the CSS before it is cached.
  *
  * @param string $css The original CSS.
- * @param string $coursetitlecolour The course title text colour to use.
- * @return string The CSS which now contains our set course title text colour.
- */
-function theme_dennis_set_coursetitlecolour($css, $coursetitlecolour) {
-    $tag = '[[setting:coursetitlecolour]]';
-    $replacement = $coursetitlecolour;
-    if (is_null($replacement)) {
-        $replacement = '#000';
-    }
-
-    $css = str_replace($tag, $replacement, $css);
-
-    return $css;
-}
-
-/**
- * Adds any custom CSS to the CSS before it is cached.
- *
- * @param string $css The original CSS.
+ * @param string $tag The tag to replace.
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_dennis_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
+function theme_dennis_set_setting($css, $tag, $customcss) {
     $replacement = $customcss;
     if (is_null($replacement)) {
         $replacement = '';
