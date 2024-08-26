@@ -28,11 +28,12 @@
         "courseheader": "course_header_html",
         "timeofday": "Good morning",
         "firstname": "Admin",
-        "loggedinduration": ", you have been logged in for 0h 15m and 45s."
+        "loggedinduration": ", you have been logged in for 0h 15m and 45s.",
+        "hasbackgroundimage": false
     }
 }}
-<header id="page-header" class="header-maxwidth d-print-none">
-    <div class="w-100">
+<header id="page-header" class="header-maxwidth{{#hasbackgroundimage}} hasbackgroundimage p-0{{/hasbackgroundimage}} d-print-none">
+    <div id="page-header-wrapper" class="w-100{{#hasbackgroundimage}} p-2{{/hasbackgroundimage}}">
         <div class="d-flex flex-wrap">
             {{#hasnavbar}}
             <div id="page-navbar">
