@@ -25,6 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-if ($ADMIN->fulltree) {
-    // Add your settings here.
-}
+//if ($ADMIN->fulltree) {
+    // Add your settings here and uncomment the 'if' statement.
+//}
