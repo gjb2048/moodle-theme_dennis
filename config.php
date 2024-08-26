@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 $THEME->doctype = 'html5';
 $THEME->name = 'dennis';
 $THEME->parents = ['boost'];
-$THEME->sheets = [''];
+$THEME->sheets = ['styles'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
 $THEME->precompiledcsscallback = 'theme_boost_get_precompiled_css';
