@@ -29,6 +29,15 @@ if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingdennis', get_string('configtitle', 'theme_dennis'));
     $page = new admin_settingpage('theme_dennis_general', get_string('generalsettings', 'theme_boost'));
 
+    // Header background image.
+    $name = 'theme_dennis/headerbackgroundimage';
+    $title = get_string('headerbackgroundimage', 'theme_dennis');
+    $description = get_string('headerbackgroundimagedesc', 'theme_dennis');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbackgroundimage', 0,
+        array('accepted_types' => array('jpg', 'png', 'webp')));
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Custom CSS.
     $name = 'theme_dennis/customcss';
     $title = get_string('customcss', 'theme_dennis');
