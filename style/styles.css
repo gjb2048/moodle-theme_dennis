@@ -5,3 +5,10 @@
     margin: 4px;
     max-width: calc(100% - 8px);
 }
+
+body:not(.format-site) .page-context-header .page-header-headings h1 {
+    color: [[setting:coursetitlecolour]];
+}
+
+/* Custom CSS */
+[[setting:customcss]]

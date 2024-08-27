@@ -88,3 +88,52 @@ function theme_dennis_get_extra_scss($theme) {
 
     return $scss;
 }
+
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
+function theme_dennis_process_css($css, $theme) {
+
+    // Set the course title text colour.
+    if (!empty($theme->settings->coursetitlecolour)) {
+        $coursetitlecolour = $theme->settings->coursetitlecolour;
+    } else {
+        $coursetitlecolour = '#000';
+    }
+    $css = theme_dennis_set_setting($css, '[[setting:coursetitlecolour]]', $coursetitlecolour);
+
+    // Set custom CSS.
+    if (!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    } else {
+        $customcss = null;
+    }
+    $css = theme_dennis_set_setting($css, '[[setting:customcss]]', $customcss);
+
+    return $css;
+}
+
+/**
+ * Adds replaces a given setting (tag) in the CSS before it is cached.
+ *
+ * @param string $css The original CSS.
+ * @param string $tag The tag to replace.
+ * @param string $customcss The custom CSS to add.
+ * @return string The CSS which now contains our custom CSS.
+ */
+function theme_dennis_set_setting($css, $tag, $customcss) {
+    $replacement = $customcss;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
