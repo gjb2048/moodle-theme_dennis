@@ -41,7 +41,14 @@ function theme_dennis_get_pre_scss($theme) {
     if (empty($boosttheme)) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
     }
-    $scss = theme_boost_get_pre_scss($boosttheme);
+
+    $scss = '';
+    /*$scss .= '$font-family-base: \'Aleo\' !default;';
+    $scss .= '$font-weight-base: normal !default;';
+    $scss .= '$headings-font-family: \'Lato\' !default;';
+    $scss .= '$headings-font-weight: 700 !default;';*/
+
+    $scss .= theme_boost_get_pre_scss($boosttheme);
 
     return $scss;
 }

@@ -1,0 +1,175 @@
+/* Aleo */
+@font-face {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: lighter;
+    src: url([[font:theme|Aleo-Light.otf]]) format('opentype');
+}
+@font-face {
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: lighter;
+    src: url([[font:theme|Aleo-LightItalic.otf]]) format('opentype');
+}
+
+@font-face {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: normal;
+    src: url([[font:theme|Aleo-Regular.otf]]) format('opentype');
+}
+@font-face {
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: normal;
+    src: url([[font:theme|Aleo-Italic.otf]]) format('opentype');
+}
+
+@font-face {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: bold;
+    src: url([[font:theme|Aleo-Bold.otf]]) format('opentype');
+}
+@font-face {
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: bold;
+    src: url([[font:theme|Aleo-BoldItalic.otf]]) format('opentype');
+}
+
+/* Lato */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 100;
+    src: url([[font:theme|Lato-Hairline.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 100;
+    src: url([[font:theme|Lato-HairlineItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 200;
+    src: url([[font:theme|Lato-Thin.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 200;
+    src: url([[font:theme|Lato-ThinItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: url([[font:theme|Lato-Light.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 300;
+    src: url([[font:theme|Lato-LightItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url([[font:theme|Lato-Regular.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: url([[font:theme|Lato-Italic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    src: url([[font:theme|Lato-Medium.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 500;
+    src: url([[font:theme|Lato-MediumItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    src: url([[font:theme|Lato-Semibold.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 600;
+    src: url([[font:theme|Lato-SemiboldItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url([[font:theme|Lato-Bold.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 700;
+    src: url([[font:theme|Lato-BoldItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    src: url([[font:theme|Lato-Heavy.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 800;
+    src: url([[font:theme|Lato-HeavyItalic.ttf]]) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url([[font:theme|Lato-Black.ttf]]) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 900;
+    src: url([[font:theme|Lato-BlackItalic.ttf]]) format('truetype');
+}
+
+/* Set the heading and body fonts or use theme_dennis_get_pre_scss in lib.php to use the Bootstrap SCSS variables */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: normal;
+}
