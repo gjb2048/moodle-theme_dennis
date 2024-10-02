@@ -31,7 +31,7 @@ use theme_config;
  * Unit tests for the Dennis theme.
  * @group theme_dennis
  */
-final class theme_dennis_tests extends \advanced_testcase {
+final class theme_dennis_test extends \advanced_testcase {
 
     /** @var class $outputus */
     protected $outputus;
@@ -50,7 +50,7 @@ final class theme_dennis_tests extends \advanced_testcase {
     /**
      * Test drawerleftwidth.
      */
-    public function test_drawerleftwidth() {
+    public function test_drawerleftwidth(): void {
         set_config('drawerleftwidth', '150', 'theme_dennis');
         $us = theme_config::load('dennis');
         $scsspre = theme_dennis_get_pre_scss($us);
@@ -61,7 +61,7 @@ final class theme_dennis_tests extends \advanced_testcase {
     /**
      * Test drawerrightwidth.
      */
-    public function test_drawerrightwidth() {
+    public function test_drawerrightwidth(): void {
         set_config('drawerrightwidth', '240', 'theme_dennis');
         $us = theme_config::load('dennis');
         $scsspre = theme_dennis_get_pre_scss($us);
@@ -72,7 +72,7 @@ final class theme_dennis_tests extends \advanced_testcase {
     /**
      * Test image_url.
      */
-    public function test_pix() {
+    public function test_pix(): void {
         global $CFG;
 
         $ouricon = $this->outputus->image_url('icon', 'theme');
