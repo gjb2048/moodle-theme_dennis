@@ -49,6 +49,7 @@ final class theme_dennis_test extends \advanced_testcase {
 
     /**
      * Test drawerleftwidth.
+     * @covers ::theme_dennis_get_pre_scss
      */
     public function test_drawerleftwidth(): void {
         set_config('drawerleftwidth', '150', 'theme_dennis');
@@ -60,6 +61,7 @@ final class theme_dennis_test extends \advanced_testcase {
 
     /**
      * Test drawerrightwidth.
+     * @covers ::theme_dennis_get_pre_scss
      */
     public function test_drawerrightwidth(): void {
         set_config('drawerrightwidth', '240', 'theme_dennis');
@@ -71,6 +73,7 @@ final class theme_dennis_test extends \advanced_testcase {
 
     /**
      * Test image_url.
+     * @covers ::image_url
      */
     public function test_pix(): void {
         global $CFG;
