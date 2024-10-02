@@ -1,0 +1,39 @@
+$backtotop-bottom-position: 2rem !default;
+
+#back-to-top {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s ease 0s, visibility .1s ease .8s;
+    display: block;
+    position: fixed;
+    bottom: $backtotop-bottom-position;
+    left: 40px;
+    a {
+        &:hover,
+        &:focus {
+            background-color: $dennisyellow !important; // Override generated Bootstrap $theme-colors selectors.
+            box-shadow: 0 0 4px map-get($theme-colors, 'dennisyellow');
+            color: $dennisblue;
+        }
+    }
+    .icon {
+        margin-right: 0;
+    }
+}
+
+$drawer-left-width: 285px !default;
+.jsenabled #page.drawers.show-drawer-left #back-to-top {
+    left: $drawer-left-width + 40px;
+}
+
+@include media-breakpoint-down(sm) {
+    #back-to-top {
+        bottom: 0;
+    }
+}
+
+#back-to-top.shown {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s ease 0s, opacity .7s ease .1s;
+}
