@@ -24,6 +24,7 @@
         "output": {
             "page_doc_link": "Documentation for this page",
             "supportemail": "<a href=\"#\">Contact site support</a>",
+            "footerblocks": "<h2>Footer blocks html goes here</h2>",
             "has_popover_links": true,
             "services_support": "Services and support",
             "login_info": "You are logged in as cute kitten",
@@ -40,6 +41,11 @@
         {{#pix}} i/up, core, {{#str}} totop, theme_classic {{/str}}{{/pix}}
     </a>
 </div>
+{{#footerblocks}}
+<section class="container-fluid d-print-none" aria-label="{{#str}} footerblocks, theme_dennis {{/str}}">
+    {{{ footerblocks }}}
+</section>
+{{/footerblocks}}
 <footer id="page-footer" class="footer-popover bg-dennisblue fg-dennisblue bs-dennisblue">
     <div data-region="footer-container-popover">
         {{#output.has_communication_links}}

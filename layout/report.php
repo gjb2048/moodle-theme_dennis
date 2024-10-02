@@ -48,6 +48,7 @@ if (!$courseindex) {
 }
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$blocksfooterhtml = $OUTPUT->dennisblocks('footer', [], 'aside', false, 3, true);
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
 $secondarynavigation = false;
@@ -76,6 +77,7 @@ $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
+    'footerblocks' => $blocksfooterhtml,
     'courseindexopen' => $courseindexopen,
     'courseindex' => $courseindex,
     'primarymoremenu' => $primarymenu['moremenu'],

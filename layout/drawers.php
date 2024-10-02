@@ -52,9 +52,10 @@ if ($courseindexopen) {
     $extraclasses[] = 'drawer-open-index';
 }
 
-$blockshtml = $OUTPUT->blocks('side-pre');
-$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
-if (!$hasblocks) {
+// Use our method so that the block region name gets output when editing.
+$blocksprehtml = $OUTPUT->dennisblocks('side-pre', [], 'aside', false);
+$haspreblocks = (strpos($blocksprehtml, 'data-block=') !== false || !empty($addblockbutton));
+if (!$haspreblocks) {
     $blockdraweropen = false;
 }
 $courseindex = core_course_drawer();
@@ -63,6 +64,7 @@ if (!$courseindex) {
 }
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$blocksfooterhtml = $OUTPUT->dennisblocks('footer', [], 'aside', false, 3);
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
 $secondarynavigation = false;
@@ -90,9 +92,10 @@ $headercontent = $header->export_for_template($renderer);
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'sidepreblocks' => $blockshtml,
-    'hasblocks' => $hasblocks,
+    'sidepreblocks' => $blocksprehtml,
+    'hasblocks' => $haspreblocks,
     'bodyattributes' => $bodyattributes,
+    'footerblocks' => $blocksfooterhtml,
     'courseindexopen' => $courseindexopen,
     'blockdraweropen' => $blockdraweropen,
     'courseindex' => $courseindex,
