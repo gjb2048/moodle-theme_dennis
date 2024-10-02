@@ -38,7 +38,7 @@ $functions = [
 
 $services = [
     'Dennis theme server datetime' => [
-        'functions' => array('theme_dennis_server_datetime'),
+        'functions' => ['theme_dennis_server_datetime'],
         'restrictedusers' => 0,
         'enabled' => 1,
     ],

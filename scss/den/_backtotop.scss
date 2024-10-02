@@ -1,4 +1,9 @@
 $backtotop-bottom-position: 2rem !default;
+$backtotop-left-position: 2.5rem !default;
+$backtotop-right-position: auto !default;
+$backtotop-report-bottom-position: 5rem !default;
+$backtotop-report-left-position: auto !default;
+$backtotop-report-right-position: 0 !default;
 
 #back-to-top {
     visibility: hidden;
@@ -7,7 +12,8 @@ $backtotop-bottom-position: 2rem !default;
     display: block;
     position: fixed;
     bottom: $backtotop-bottom-position;
-    left: 40px;
+    left: $backtotop-left-position;
+    right: $backtotop-right-position;
     a {
         &:hover,
         &:focus {
@@ -18,6 +24,14 @@ $backtotop-bottom-position: 2rem !default;
     }
     .icon {
         margin-right: 0;
+    }
+}
+
+.pagelayout-report {
+    #back-to-top {
+        bottom: $backtotop-report-bottom-position;
+        left: $backtotop-report-left-position;
+        right: $backtotop-report-right-position;
     }
 }
 
