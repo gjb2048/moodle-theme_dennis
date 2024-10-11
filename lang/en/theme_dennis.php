@@ -40,6 +40,11 @@ $string['pluginname'] = 'Dennis';
 
 $string['region-side-pre'] = 'Right';
 
+$string['drawerleftwidth'] = 'Left drawer width';
+$string['drawerrightwidth'] = 'Right drawer width';
+$string['sizesdesc'] = 'Between {$a->lower} and {$a->upper} pixels.';
+$string['sizeserror'] = '{$a->setting} is outside the range {$a->lower} to {$a->upper}';
+
 $string['fontsizes'] = 'Font sizes';
 $string['fontsizesdesc'] = 'Set the base font size and heading multiplers.  Defaults of base: {$a->base}, h1: {$a->h1}, h2: {$a->h2}, h3: {$a->h3}, h4: {$a->h4}, h5: {$a->h5} and h6: {$a->h6}.';
 $string['fontsizeslabel'] = 'Base<br>H1<br>H2<br>H3<br>H4<br>H5<br>H6';
