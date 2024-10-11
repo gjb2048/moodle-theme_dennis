@@ -39,6 +39,8 @@ $string['configtitle'] = 'Dennis';
 $string['pluginname'] = 'Dennis';
 
 $string['region-side-pre'] = 'Right';
+$string['region-footer'] = 'Footer';
+$string['footerblocks'] = 'Footer blocks';
 
 $string['drawerleftwidth'] = 'Left drawer width';
 $string['drawerrightwidth'] = 'Right drawer width';

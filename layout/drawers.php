@@ -18,7 +18,7 @@
  * A drawer based layout for the boost theme.
  *
  * @package    theme_dennis
- * @copyright  &copy; 2022-onwards G J Barnard.
+ * @copyright  &copy; 2020-onwards G J Barnard.
  * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @copyright  2021 Bas Brands
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -29,10 +29,19 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 
+// Add block button in editing mode.
+$addblockbutton = $OUTPUT->addblockbutton();
+
 if (isloggedin()) {
     $courseindexopen = (get_user_preferences('drawer-open-index', true) == true);
+    $blockdraweropen = (get_user_preferences('drawer-open-block') == true);
 } else {
     $courseindexopen = false;
+    $blockdraweropen = false;
+}
+
+if (defined('BEHAT_SITE_RUNNING') && get_user_preferences('behat_keep_drawer_closed') != 1) {
+    $blockdraweropen = true;
 }
 
 $extraclasses = ['uses-drawers'];
@@ -40,13 +49,19 @@ if ($courseindexopen) {
     $extraclasses[] = 'drawer-open-index';
 }
 
+// Use our method so that the block region name gets output when editing.
+$blocksprehtml = $OUTPUT->dennisblocks('side-pre', [], 'aside', false);
+$haspreblocks = (strpos($blocksprehtml, 'data-block=') !== false || !empty($addblockbutton));
+if (!$haspreblocks) {
+    $blockdraweropen = false;
+}
 $courseindex = core_course_drawer();
 if (!$courseindex) {
     $courseindexopen = false;
 }
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
-$blocksfooterhtml = $OUTPUT->dennisblocks('footer', [], 'aside', false, 3, true);
+$blocksfooterhtml = $OUTPUT->dennisblocks('footer', [], 'aside', false, 3);
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
 $secondarynavigation = false;
@@ -74,9 +89,12 @@ $headercontent = $header->export_for_template($renderer);
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'sidepreblocks' => $blocksprehtml,
+    'hasblocks' => $haspreblocks,
     'bodyattributes' => $bodyattributes,
     'footerblocks' => $blocksfooterhtml,
     'courseindexopen' => $courseindexopen,
+    'blockdraweropen' => $blockdraweropen,
     'courseindex' => $courseindex,
     'primarymoremenu' => $primarymenu['moremenu'],
     'secondarymoremenu' => $secondarynavigation ?: false,
@@ -88,6 +106,7 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'overflow' => $overflow,
     'headercontent' => $headercontent,
+    'addblockbutton' => $addblockbutton,
 ];
 
-echo $OUTPUT->render_from_template('theme_dennis/report', $templatecontext);
+echo $OUTPUT->render_from_template('theme_boost/drawers', $templatecontext);
