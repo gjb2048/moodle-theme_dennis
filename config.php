@@ -37,6 +37,13 @@ $THEME->enable_dock = false;
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = [];
 
+$THEME->layouts = [
+    // The pagelayout used for reports.
+    'report' => [
+        'file' => 'report.php',
+        'regions' => [],
+    ],
+];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->prescsscallback = 'theme_dennis_get_pre_scss';

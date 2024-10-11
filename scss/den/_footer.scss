@@ -1,0 +1,19 @@
+#page-footer .footer-content-debugging {
+    a {
+        color: darken($yiq-text-light, 5%) !important;
+        &:hover {
+            color: $yiq-text-light !important;
+        }
+    }
+
+    a:not([class]) {
+        &.focus,
+        &:focus {
+            background-color: darken(map-get($theme-colors, 'dennisblue'), 50%);
+            box-shadow: 0 -#{$btn-focus-width} darken(map-get($theme-colors, 'dennisblue'), 50%), 0 $btn-focus-width $gray-400;
+            color: $yiq-text-light !important;
+            outline: $btn-focus-width solid transparent;
+            text-decoration: none;
+        }
+    }
+}
