@@ -53,5 +53,20 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Header background image.
+    $name = 'theme_dennis/headerbackgroundimage';
+    $title = get_string('headerbackgroundimage', 'theme_dennis');
+    $description = get_string('headerbackgroundimagedesc', 'theme_dennis');
+    $setting = new admin_setting_configstoredfile(
+        $name,
+        $title,
+        $description,
+        'headerbackgroundimage',
+        0,
+        ['accepted_types' => ['jpg', 'png', 'webp']]
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     $settings->add($page);
 }

@@ -44,6 +44,15 @@ $string['coursesettings'] = 'Course settings';
 $string['coursetitlecolour'] = 'Course title text colour';
 $string['coursetitlecolourdesc'] = 'What colour the course title text should be.';
 
+$string['morning'] = 'Good morning';
+$string['afternoon'] = 'Good afternoon';
+$string['evening'] = 'Good evening';
+$string['loggedin'] = ', you have been logged in for {$a->duration}.';
+$string['durationformat'] = 'G\h i\m \a\n\d s\s';
+
+$string['headerbackgroundimage'] = 'Header background image';
+$string['headerbackgroundimagedesc'] = 'Set the header background image.';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Add custom CSS to the theme.';
 

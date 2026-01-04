@@ -2,5 +2,17 @@ body:not(.format-site) .page-context-header .page-header-headings h1 {
     color: [[setting:coursetitlecolour]];
 }
 
+#page-header.hasbackgroundimage {
+    [[setting:headerbackgroundimage]]
+    background-position: center;
+    background-size: cover;
+    border-radius: 0;
+    border-width: 0;
+}
+
+#page-header.hasbackgroundimage #page-header-wrapper {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
 /* Custom CSS */
 [[setting:customcss]]
