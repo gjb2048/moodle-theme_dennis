@@ -183,7 +183,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                         $currentrow = $currentrequiredrow;
                     }
 
-                    $bc->attributes['class'] .= ' colly-' . $colly;
+                    $bc->attributes['class'] .= ' m-2 colly-' . $colly;
                 }
 
                 if ($bc instanceof block_contents) {
