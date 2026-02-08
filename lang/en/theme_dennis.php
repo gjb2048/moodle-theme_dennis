@@ -40,6 +40,7 @@ $string['pluginname'] = 'Dennis';
 
 $string['region-side-pre'] = 'Right';
 
+$string['clickmebutton'] = 'Click me!';
 $string['drawerleftwidth'] = 'Left drawer width';
 $string['drawerrightwidth'] = 'Right drawer width';
 $string['sizesdesc'] = 'Between {$a->lower} and {$a->upper} pixels.';
