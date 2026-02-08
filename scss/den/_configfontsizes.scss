@@ -1,0 +1,16 @@
+#admin-fontsizes {
+    .form-defaultinfo br {
+        display: none;
+    }
+
+    label {
+        margin-top: 7px;
+        text-align: right;
+        vertical-align: top;
+    }
+
+    textarea {
+        display: inline-block;
+        height: 65%;
+    }
+}

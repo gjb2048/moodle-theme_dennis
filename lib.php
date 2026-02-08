@@ -55,6 +55,25 @@ function theme_dennis_get_pre_scss($theme) {
         $scss .= '$drawer-right-width: ' . $theme->settings->drawerrightwidth . 'px;' . PHP_EOL;
     }
 
+    // Test.
+    /*$scss .= '$font-size-base: 1.5rem;';
+    $scss .= '$h1-font-size: $font-size-base * 2.5;';
+    $scss .= '$h2-font-size: $font-size-base * 2;';
+    $scss .= '$h3-font-size: $font-size-base * 1.75;';
+    $scss .= '$h4-font-size: $font-size-base * 1.5;';
+    $scss .= '$h5-font-size: $font-size-base * 1.25;';
+    $scss .= '$h6-font-size: $font-size-base * 1;';*/
+    if (!empty($theme->settings->fontsizes)) {
+        $sizes = \theme_dennis\admin_setting_configfontsizes::decode_from_db($theme->settings->fontsizes);
+        $scss .= '$font-size-base: ' . $sizes[0] . ';';
+        $scss .= '$h1-font-size: $font-size-base * ' . $sizes[1] . ';';
+        $scss .= '$h2-font-size: $font-size-base * ' . $sizes[2] . ';';
+        $scss .= '$h3-font-size: $font-size-base * ' . $sizes[3] . ';';
+        $scss .= '$h4-font-size: $font-size-base * ' . $sizes[4] . ';';
+        $scss .= '$h5-font-size: $font-size-base * ' . $sizes[5] . ';';
+        $scss .= '$h6-font-size: $font-size-base * ' . $sizes[6] . ';';
+    }
+
     return $scss;
 }
 
