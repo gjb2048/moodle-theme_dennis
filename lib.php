@@ -47,6 +47,14 @@ function theme_dennis_get_pre_scss($theme) {
 
     $scss .= file_get_contents($CFG->dirroot . '/theme/dennis/scss/dennis_pre.scss');
 
+    if (!empty($theme->settings->drawerleftwidth)) {
+        $scss .= '$drawer-left-width: ' . $theme->settings->drawerleftwidth . 'px;' . PHP_EOL;
+    }
+
+    if (!empty($theme->settings->drawerrightwidth)) {
+        $scss .= '$drawer-right-width: ' . $theme->settings->drawerrightwidth . 'px;' . PHP_EOL;
+    }
+
     return $scss;
 }
 
