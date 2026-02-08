@@ -1,0 +1,30 @@
+$grid-gutter-width: 30px !default;
+
+.colly-container {
+    display: flex;
+    justify-content: space-between;
+    &.editing {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+.colly-1 {
+    flex-basis: 100%;
+}
+
+.colly-2 {
+    flex-basis: 50%;
+}
+
+.colly-3 {
+    flex-basis: 33.3%;
+}
+
+.colly-4 {
+    flex-basis: 25%;
+}
+
+.colly-container.editing section {
+    flex-basis: calc(25% - #{$grid-gutter-width * 0.5});
+}
