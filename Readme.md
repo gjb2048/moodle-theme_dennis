@@ -8,8 +8,8 @@ design with SCSS and Mustache, overloading of renderers, SCSS and templates.
 About
 =====
 Copyright  &copy; 2020-onwards G J Barnard.
-Author     G J Barnard - http://about.me/gjbarnard and http://moodle.org/user/profile.php?id=442195
-License    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+Author     G J Barnard - https://about.me/gjbarnard and https://moodle.org/user/profile.php?id=442195
+License    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 
 Developed and maintained by
 ===========================
@@ -28,10 +28,10 @@ If you reuse any of the code then I kindly ask that you make reference to the th
 
 Required version of Moodle
 ==========================
-This version works with Moodle 4.4 version 2024042200.00 (Build: 20240422) and above within the MOODLE_404_STABLE branch until the
+This version works with Moodle 4.5 version 2024100700.00 (Build: 20241007) and above within the MOODLE_405_STABLE branch until the
 next release.
 
-Please ensure that your hardware and software complies with 'Requirements' in '[Installing Moodle](https://docs.moodle.org/404/en/Installing_Moodle)'.
+Please ensure that your hardware and software complies with 'Requirements' in '[Installing Moodle](https://docs.moodle.org/405/en/Installing_Moodle)'.
 
 Installation
 ============
@@ -81,5 +81,4 @@ Me
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 
 - Moodle profile | [Moodle.org](https://moodle.org/user/profile.php?id=442195)
-- @gjbarnard | [X](https://x.com/gjbarnard).
 - Web profile | [gjbarnard.co.uk](https://gjbarnard.co.uk)
